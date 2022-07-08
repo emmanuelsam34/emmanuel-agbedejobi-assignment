@@ -3,7 +3,21 @@ const assignment = require('../src/assignment.js');
 const { sumOfNumbers } = assignment;
 const maybe = sumOfNumbers === undefined ? test.skip : test;
 
-maybe('Challenge - 1 : my sumNumbers function can sum an array of numbers', () => {
+function sumDigits(e) {
+  if( e == 'click' || e.keyCode == 13 ){
+    
+    var userNum = document.getElementById("userVal").value;
+
+    var sum = 0;
+    var numString = userNum + "";
+    for ( var i = 0; i < numString.length; i++ ){
+      sum = sum + Number(numString.charAt(i));
+    };
+
+    document.getElementById("results").textContent = sum;   
+  }
+};
+
     const numbers = [
         68,
         -68,
